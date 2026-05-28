@@ -1,0 +1,12 @@
+Autorzy: Ewa Stankiewicz i Dominika Strutyńska 
+front end = Ewa
+back end = Dominika
+testy, dokumentacja i inne = razem
+
+był mały problem z Swaggerem, kiedy pisało się komendę to wyrzucał błąd, ale dokumentacja się tworzy, wystarczy dopisać do linku strony /api/documentation
+
+paginacja działa gdy jest wiecej niż 5 wierszy w tabeli.
+
+co zostało zmienione:
+
+cały front end został przeniesiony do /resources, index html zostal zamieniony na users.blade.php i reszta plików została zmieniona tak, żeby działała po dokonanych zmianach.
