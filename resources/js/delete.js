@@ -1,4 +1,4 @@
-import { currentPage, setCurrentPage } from './stan';
+import { currentPage, setCurrentPage } from './state';
 import { loadUsers } from './load';
 
 window.deleteUser = async function(id) {
