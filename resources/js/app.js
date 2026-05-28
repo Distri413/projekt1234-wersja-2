@@ -88,22 +88,20 @@ window.editUser = function(id, name, surname, email) {
     submitBtn.innerText = "Zapisz zmiany";
 }
 
-window.deleteUser = function(id) {
-    fetch(`/api/users/${id}`, {
-        method: "DELETE"
-    })
-    .then(() => loadUsers())
-    .then(() => {
-        setTimeout(checkEmptyPage, 200);
-    });
-}
+window.deleteUser = async function(id) {
 
-function checkEmptyPage() {
-    const rows = document.querySelectorAll("#usersTable tr");
-    if (rows.length === 0 && currentPage > 1) {
+    await fetch(`/api/users/${id}`, {
+        method: "DELETE"
+    });
+
+    const res = await fetch(`/api/users?page=${currentPage}`);
+    const data = await res.json();
+
+    if (data.data.length === 0 && currentPage > 1) {
         currentPage--;
-        loadUsers();
     }
+
+    loadUsers();
 }
 
 window.addUser = function (e) {
