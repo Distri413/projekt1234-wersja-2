@@ -1,4 +1,4 @@
-import { currentEditId, setCurrentEditId } from './stan';
+import { currentEditId, setCurrentEditId } from './state';
 import { loadUsers } from './load';
 
 window.addUser = function (e) {
