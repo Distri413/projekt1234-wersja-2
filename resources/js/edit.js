@@ -1,4 +1,4 @@
-import { setCurrentEditId } from './stan';
+import { setCurrentEditId } from './state';
 
 window.editUser = function(id, name, surname, email) {
     setCurrentEditId(id);
