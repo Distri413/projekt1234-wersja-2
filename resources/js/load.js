@@ -1,4 +1,4 @@
-import { currentPage } from './stan';
+import { currentPage } from './state';
 import { renderPagination } from './pagination';
 
 export function loadUsers() {
