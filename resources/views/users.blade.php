@@ -14,7 +14,7 @@
 
     <header>
 
-        <img src="{{ Vite::asset('resources/images/pulpetcorpPLZWORK.png') }}" alt="pulpet">
+        <img src="{{ Vite::asset('resources/images/pulpetcorpPLZWORK.png') }}" alt="logo">
 
     </header>
 
