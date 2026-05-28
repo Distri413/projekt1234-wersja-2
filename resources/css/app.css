@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff4fe;
+    color: black;
+
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    grid-template-rows: 90px 1fr;
+    grid-template-areas:
+        "header header"
+        "main aside";
+}
+
+
+header {
+    grid-area: header;
+    background: palevioletred;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgb(147, 74, 98);
+}
+
+header img {
+    height: 60px;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 30px;
+}
+
+
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.page-btn {
+    background-color: palevioletred;
+    color: #000000;
+    border: 1px solid palevioletred;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+
+.page-btn:hover {
+    background-color: palevioletred;
+    border-color: palevioletred;
+    color: #000000;
+}
+
+
+.page-btn.active {
+    background-color: #b22650;
+    border-color: #b22650;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+
+.page-nav-btn {
+    background-color: palevioletred;
+    font-weight: 600;
+}
+
+
+table {
+    width: 90%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: palevioletred;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 4px solid white;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: rgb(240, 216, 224);
+}
+
+
+aside {
+    grid-area: aside;
+    background: #ffffff;
+    border-left: 1px solid #dcdfe6;
+    padding: 50px 25px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+aside form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+aside h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #1f2937;
+    text-align: center;
+}
+
+aside label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #374151;
+}
+
+aside input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cfd4dc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+aside input:focus {
+    border-color: pink;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+aside button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 10px;
+    background: palevioletred;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+aside button:hover {
+    background: rgb(122, 63, 83);
+    transform: translateY(-2px);
+}
+
+aside button:active {
+    transform: translateY(0);
+}
+
+.delete-btn {
+    background: #b22650;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    margin: 0;
+}
+
+.delete-btn:hover {
+    background: #67162e;
+}
+
+td form {
+    margin: 0;
+}
+
+
+@media (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto;
+        grid-template-areas:
+            "header"
+            "aside"
+            "main";
+    }
+
+    aside {
+        border-left: none;
+        border-bottom: 1px solid #dcdfe6;
+        flex-direction: row;
+        justify-content: center;
+        padding: 25px;
+    }
+
+    aside button {
+        max-width: 220px;
+    }
+
+    main {
+        padding: 30px 15px;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        min-width: 650px;
+    }
+
+
+}

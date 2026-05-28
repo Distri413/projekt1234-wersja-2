@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Moje API Użytkowników",
+        "description": "Dokumentacja systemu CRUD",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "Pobierz listę użytkowników",
+                "responses": {
+                    "200": {
+                        "description": "Sukces"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Dodaj nowego użytkownika",
+                "responses": {
+                    "201": {
+                        "description": "Utworzono"
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "put": {
+                "summary": "Aktualizuj użytkownika",
+                "responses": {
+                    "200": {
+                        "description": "Zaktualizowano"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Usuń użytkownika",
+                "responses": {
+                    "200": {
+                        "description": "Usunięto"
+                    }
+                }
+            }
+        }
+    }
+}
